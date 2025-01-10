@@ -117,11 +117,11 @@ prev.addEventListener('click', function () {
 });
 
 skipBackward.addEventListener('click', function () {
-    audio.currentTime = Math.max(0, audio.currentTime - 10); // Go back 10 seconds, but not below 0
+    audio.currentTime = Math.max(0, audio.currentTime - 5); // Go back 10 seconds, but not below 0
 });
 
 skipForward.addEventListener('click', function () {
-    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10); // Go forward 10 seconds, but not beyond the audio duration
+    audio.currentTime = Math.min(audio.duration, audio.currentTime + 5); // Go forward 10 seconds, but not beyond the audio duration
 });
 
 function toggleAccordion(header) {
