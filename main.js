@@ -64,7 +64,7 @@ function playSurah(index) {
 
         audio.onended = function() {
             Swal.fire({
-                title: "Surah Completed!",
+                title: "اكتملت السورة",
                 icon: "success",
                 text: "لقد تم الاستماع بنجاح",
                 draggable: true
