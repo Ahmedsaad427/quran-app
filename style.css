@@ -1,0 +1,330 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background: url(quran-4178711_1280.jpg) center center/cover no-repeat fixed;
+    direction: rtl;
+}
+
+.container {
+    max-width: 1250px;
+    width: 100%;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.player {
+    background: linear-gradient(to right, #000, #434343);
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1000;
+}
+
+.player audio {
+    width: 100%;
+    height: 40px;
+    margin: 15px 0;
+}
+
+.player .buttons {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.buttons .icon {
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #23162f;
+    font-size: 20px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.buttons .icon:hover {
+    transform: scale(1.1);
+}
+
+.surahs {
+    max-height: calc(100vh - 100px);
+    overflow-y: auto;
+    padding-right: 15px;
+    margin-top: 15px;
+}
+
+.surahs::-webkit-scrollbar {
+    width: 10px;
+}
+
+.surahs::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.surahs::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.surahs::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.surahs>div {
+    color: #23162f;
+    background-color: #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+    font-weight: bold;
+    width: calc(100% - 90px);
+    transition: color 0.35s ease;
+    cursor: pointer;
+    margin-bottom: 10px;
+    padding: 10px 20px;
+    position: relative;
+    font-size: 20px;
+    counter-increment: surah-counter;
+    border-radius: 5px;
+}
+
+.surahs>div:hover {
+    background-color: #f0f0f0;
+}
+
+.surahs>div::after {
+    content: counter(surah-counter);
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    background-color: #fff;
+    left: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.surahs>div:hover::after {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.ayah {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.surah-details {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.surah-details p {
+    margin: 10px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.surah-details strong {
+    font-weight: bold;
+}
+
+.accordion-container {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.accordion-item {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.accordion-header {
+    background-color: #f2f2f2;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.accordion-content {
+    display: none;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.accordion-header:hover {
+    background-color: #e0e0e0;
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .player {
+        padding: 15px;
+    }
+
+    .surahs>div {
+        font-size: 18px;
+    }
+
+    .buttons .icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .surah-details {
+        padding: 10px;
+    }
+
+    .ayah {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .player {
+        padding: 10px;
+    }
+
+    .buttons .icon {
+        width: 45px;
+        height: 45px;
+    }
+
+    .surahs>div {
+        font-size: 16px;
+    }
+
+    .surah-details p {
+        font-size: 14px;
+    }
+
+    .ayah {
+        font-size: 16px;
+    }
+
+    .accordion-container {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .player {
+        padding: 5px;
+    }
+
+    .buttons .icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .surahs>div {
+        font-size: 14px;
+        padding: 8px 10px;
+    }
+
+    .ayah {
+        font-size: 14px;
+    }
+
+    .surah-details p {
+        font-size: 12px;
+    }
+
+    .accordion-item {
+        margin-bottom: 5px;
+    }
+}
+
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: pulse 1s linear infinite;
+}
+
+.loader:after {
+    content: '';
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: scaleUp 1s linear infinite;
+}
+
+@keyframes scaleUp {
+    0% {
+        transform: translate(-50%, -50%) scale(0);
+    }
+
+    60%,
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes pulse {
+    0%,
+    60%,
+    100% {
+        transform: scale(1);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+}
+
+.reciter-name {
+    color: #ffff;
+    font-weight: bold;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>القرآن الكريم</title>
+    <link rel="shortcut icon" href="#" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="quran-icon-png-7.png">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="player">
+            <div class="ayah">اضغط على الصورة للاستماع اليها</div>
+            <div id="reciter-name" class="reciter-name"></div>
+            <audio src="" class="quranPlayer" controls>
+                Your browser does not support the audio element.
+            </audio>
+            <div class="buttons">
+                <button class="icon skip-forward">10s +</button>
+
+                <button class="icon prev" aria-label="Previous Ayah"><i class="fas fa-backward"></i></button>
+                <button class="icon play" aria-label="Play Ayah"><i class="fas fa-play"></i></button>
+                <button class="icon next" aria-label="Next Ayah"><i class="fas fa-forward"></i></button>
+                <button class="icon skip-backward">10s -</button>
+
+            </div>
+        </div>
+
+        <div class="surahs">
+            <div class="surah-details">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Type</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p><strong>Arabic:</strong> <span class="type-ar"></span></p>
+                        <p><strong>English:</strong> <span class="type-en"></span></p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Tafsir</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p><span class="tafsir-text"></span></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+        <script src="./main.js"></script>
+</body>
+
+</html>
